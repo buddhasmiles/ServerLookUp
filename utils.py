@@ -11,6 +11,8 @@ def getDetailBySerialNumber(serialNumber, jsonArray):
     result = []
     for s in jsonArray:
         if s['serial'] == serialNumber:
+            #strip the hostname
+            s["hostname"] = s["hostname"].strip()
             result.append(s)
             break
 
